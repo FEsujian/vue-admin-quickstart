@@ -1,0 +1,54 @@
+{
+  "name": "wxcode",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env ENV=dev vue-cli-service serve",
+    "build": "cross-env ENV=prod vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "element-ui": "^2.4.10",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-inject": "^2.1.1",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-typescript": "^3.1.1",
+    "@vue/cli-service": "^3.1.4",
+    "cross-env": "^5.2.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "lint-staged": "^7.2.2",
+    "typescript": "^3.0.0",
+    "vue-cli-plugin-element": "^1.0.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
