@@ -15,6 +15,7 @@ const build_define = Object.assign({
 
 module.exports = {
   runtimeCompiler: true,
+
   // 修改webpack配置
   chainWebpack: config => {
     // 修改环境变量插件

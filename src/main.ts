@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './route/router';
-import store from './store/store';
-import bootstrap from '@/bootstrap';
+import router from './route';
+import store from './store';
+import bootstrap from '@/core/bootstrap';
 
 async function startup() {
   await bootstrap();

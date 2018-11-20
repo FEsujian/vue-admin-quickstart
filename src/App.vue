@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <keep-alive>
+      <template>
+        <component :is="layout"></component>
+      </template>
+    </keep-alive>
   </div>
 </template>
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import { State } from 'vuex-class';
+import DefaultLauout from '@/layouts/default.layout.vue';
+import WorkspaceLayout from '@/layouts/workspace.layout.vue';
+@Component({
+  components: {
+    default: DefaultLauout,
+    workspace: WorkspaceLayout,
+  },
+})
+export default class App extends Vue {
+  @State
+  private layout;
+}
+</script>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
