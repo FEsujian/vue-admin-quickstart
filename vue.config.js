@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const path = require('path')
 // 获取编译环境
 const build_env = process.env.ENV || "prod"
 const build_var = require(`./src/env/${build_env}.env`)
@@ -27,5 +28,19 @@ module.exports = {
           NODE_ENV: "'development'",
         }, build_define)
       }))
+    // 修改svg-loader
+    config.module.rules.delete('svg')
+
+    config.module
+      .rule('svg')
+      .test(/\.svg$/)
+      .include
+      .add(path.join(__dirname, 'src/assets/icons'))
+      .end()
+      .use('svg-sprite')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      });
   }
 }

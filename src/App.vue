@@ -22,8 +22,22 @@ import WorkspaceLayout from '@/layouts/workspace.layout.vue';
 export default class App extends Vue {
   @State
   private layout;
+
+  private get getCacheLayout() {
+    const cache: string[] = [];
+
+    // if (this.userToken) {
+    //   cache.push('WorkSpaceLayout');
+    // }
+
+    return cache;
+  }
 }
 </script>
 
 <style lang="less">
+@import 'style/default.less';
+@import 'style/common.less';
+@import 'style/theme.less';
+@import 'style/layout.less';
 </style>

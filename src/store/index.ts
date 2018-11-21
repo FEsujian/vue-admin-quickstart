@@ -15,7 +15,7 @@ const filterList = ['ready', 'layout'];
 
 export default new Vuex.Store({
   modules: {
-    Workspace,
+    workspace: Workspace,
   },
   state,
   mutations,

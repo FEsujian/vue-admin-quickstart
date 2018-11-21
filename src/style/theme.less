@@ -1,0 +1,8 @@
+// 主题列表
+body {
+  // 默认主题
+  &.theme-default {
+    @theme: default;
+    @import './themes/@{theme}.less';
+  }
+}
