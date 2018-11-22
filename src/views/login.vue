@@ -1,8 +1,7 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <section class="page login">
+    <el-button type="primary">登陆</el-button>
+  </section>
 </template>
 
 <script lang="ts">
@@ -14,5 +13,5 @@ import HelloWorld from '@/components/HelloWorld.vue';
     HelloWorld,
   },
 })
-export default class Home extends Vue {}
+export default class Login extends Vue {}
 </script>
