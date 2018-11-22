@@ -1,3 +1,3 @@
 export default {
-  layout: 'default',
+  layout: 'default', // 布局样式
 };
