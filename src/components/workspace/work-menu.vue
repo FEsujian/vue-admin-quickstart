@@ -1,6 +1,6 @@
 <template>
   <section class="component work-menu nowrap">
-    <el-menu default-active="2" text-color="#fff" active-text-color="#ffd04b" background-color="#545c64">
+    <el-menu :collapse="isCollapse" default-active="2" text-color="#fff" active-text-color="#ffd04b" background-color="#545c64" :collapse-transition="false">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
@@ -38,11 +38,16 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import { namespace } from 'vuex-class';
+const workspace = namespace('workspace');
 
 @Component({
   components: {},
 })
-export default class WorkMenu extends Vue {}
+export default class WorkMenu extends Vue {
+  @workspace.State
+  private isCollapse;
+}
 </script>
 
 <style lang="less">
