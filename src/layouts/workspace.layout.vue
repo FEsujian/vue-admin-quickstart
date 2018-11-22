@@ -10,14 +10,7 @@
       <el-container>
         <el-header height="50px" style="background-color:#ccc" class="flex-align-center">
           <hamburger :toggle-click="toggleClick" :is-active="isCollapse" class="hamburger-container" />
-          <!-- 以下内容提取为组件 -->
-          <el-breadcrumb separator="/" style="padding-left:10px;">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-            <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-            <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-          </el-breadcrumb>
-          <!-- 面包屑 -->
+          <work-breadcrumb></work-breadcrumb>
         </el-header>
         <el-header height="40px" style="background-color:#eee"></el-header>
         <el-main>
@@ -36,6 +29,7 @@ import Component from 'vue-class-component';
 import { namespace } from 'vuex-class';
 import WorkHeader from '@/components/workspace/work-header.vue';
 import WorkMenu from '@/components/workspace/work-menu.vue';
+import WorkBreadcrumb from '@/components/workspace/work-breadcrumb.vue';
 import Hamburger from '@/components/common/hamburger.vue';
 
 const workspace = namespace('workspace');
@@ -45,6 +39,7 @@ const workspace = namespace('workspace');
     WorkHeader,
     WorkMenu,
     Hamburger,
+    WorkBreadcrumb,
   },
 })
 export default class WorkSpaceLayout extends Vue {
