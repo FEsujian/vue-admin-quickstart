@@ -3,7 +3,6 @@
     <header></header>
     <main>
       <div class="ft24 text-center mt10">登录</div>
-      <img src="../assets/images/bg.jpg" alt="">
       <el-input type="primary" placeholder="请输入账号" v-model="admin"></el-input>
       <el-input type="primary" placeholder="请输入密码" v-model="password"></el-input>
       <el-button type="primary" @click="login" style="width:100%">登录</el-button>
@@ -36,6 +35,11 @@ export default class Login extends Vue {
 }
 </script>
 <style lang="less" scoped>
+* {
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .bg {
   background: url('../assets/images/bg.jpg') center no-repeat;
   background-size: 100%;
@@ -51,7 +55,6 @@ header,
 main {
   width: 250px;
   height: 250px;
-  // border: 1px solid grey;
   padding: 50px;
   border-radius: 5px;
   position: fixed;

@@ -1,6 +1,6 @@
 <template>
   <section class="component work-menu nowrap">
-    <el-menu :collapse="isCollapse" default-active="2" text-color="#fff" active-text-color="#ffd04b" background-color="#545c64" :collapse-transition="false">
+    <el-menu router :collapse="isCollapse" default-active="2" text-color="#fff" active-text-color="#ffd04b" background-color="#545c64" :collapse-transition="false">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
